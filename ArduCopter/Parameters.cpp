@@ -962,6 +962,7 @@ const AP_Param::GroupInfo ParametersG2::var_info[] = {
 #endif
 
 
+    AP_GROUPINFO("STAR_R_CM", 38, ParametersG2, star_radius_cm, 1000),
 
     AP_GROUPEND
 };
