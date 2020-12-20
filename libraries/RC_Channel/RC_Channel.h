@@ -183,6 +183,7 @@ public:
 
         // inputs eventually used to replace RCMAP
         MAINSAIL =           207, // mainsail input
+        SAVE_USER_WP = 103, //save user way point
     };
     typedef enum AUX_FUNC aux_func_t;
 
