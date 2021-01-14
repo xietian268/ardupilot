@@ -141,6 +141,7 @@ const AP_Scheduler::Task Copter::scheduler_tasks[] = {
 #endif
     SCHED_TASK_CLASS(AP_Notify,            &copter.notify,              update,          50,  90),
     SCHED_TASK(one_hz_loop,            1,    100),
+    SCHED_TASK(update_STM32,         400,    100),
     SCHED_TASK(ekf_check,             10,     75),
     SCHED_TASK(check_vibration,       10,     50),
     SCHED_TASK(gpsglitch_check,       10,     50),
@@ -331,6 +332,13 @@ void Copter::update_batt_compass(void)
     }
 }
 
+void Copter::update_STM32(void)
+{
+    if(stm32.update()){
+
+    }
+}
+
 // Full rate logging of attitude, rate and pid loops
 // should be run at 400hz
 void Copter::fourhundred_hz_logging()
@@ -473,6 +481,11 @@ void Copter::one_hz_loop()
     //static float shownum = 1.0;
     //gcs().send_text(MAV_SEVERITY_CRITICAL,"num is: %.1f",shownum);
     //shownum = shownum + 1.0;
+
+    gcs().send_text(MAV_SEVERITY_CRITICAL,
+                    "STM32 xd:%d yd:%d",
+                    stm32.xd,
+                    stm32.yd);
 }
 
 // called at 50hz

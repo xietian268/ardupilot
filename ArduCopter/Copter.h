@@ -67,6 +67,7 @@
 #include <AP_TempCalibration/AP_TempCalibration.h>
 #include <AC_AutoTune/AC_AutoTune.h>
 #include <AP_Common/AP_FWVersion.h>
+#include <AP_STM32/AP_STM32.h>
 
 // Configuration
 #include "defines.h"
@@ -244,6 +245,9 @@ public:
     void loop() override;
 
 private:
+
+    AP_STM32 stm32;
+
     static const AP_FWVersion fwver;
 
     // key aircraft parameters passed to multiple libraries
@@ -671,6 +675,7 @@ private:
     void update_super_simple_bearing(bool force_update);
     void read_AHRS(void);
     void update_altitude();
+    void update_STM32(void);
 
     // Attitude.cpp
     float get_pilot_desired_yaw_rate(int16_t stick_angle);

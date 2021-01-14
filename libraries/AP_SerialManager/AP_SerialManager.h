@@ -124,6 +124,7 @@ public:
         SerialProtocol_SLCAN = 22,
         SerialProtocol_RCIN = 23,
         SerialProtocol_Hott = 27,
+        SerialProtocol_STM32 = 35,
     };
 
     // get singleton instance

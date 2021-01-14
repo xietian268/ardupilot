@@ -267,6 +267,8 @@ void Copter::init_ardupilot()
 #if AP_PARAM_KEY_DUMP
     AP_Param::show_all(hal.console, true);
 #endif
+
+    stm32.init(serial_manager);
 }
 
 
