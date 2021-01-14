@@ -469,6 +469,10 @@ void Copter::one_hz_loop()
 #endif
 
     AP_Notify::flags.flying = !ap.land_complete;
+
+    //static float shownum = 1.0;
+    //gcs().send_text(MAV_SEVERITY_CRITICAL,"num is: %.1f",shownum);
+    //shownum = shownum + 1.0;
 }
 
 // called at 50hz

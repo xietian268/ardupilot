@@ -26,6 +26,7 @@ void Copter::userhook_50Hz()
 void Copter::userhook_MediumLoop()
 {
     // put your 10Hz code here
+
 }
 #endif
 
