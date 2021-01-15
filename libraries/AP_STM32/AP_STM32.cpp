@@ -52,6 +52,9 @@ bool AP_STM32::update()
     if(_port ==NULL)
         return false;
 
+    xd = 1;
+    yd = 1;
+
     int16_t numc = _port->available();
     uint8_t data;
     uint8_t checkbyte = 0x0D;
@@ -94,6 +97,7 @@ bool AP_STM32::update()
             _step = 0;
         }
     }
+    _port->write(numc);
 
     return false;
 }

@@ -482,10 +482,7 @@ void Copter::one_hz_loop()
     //gcs().send_text(MAV_SEVERITY_CRITICAL,"num is: %.1f",shownum);
     //shownum = shownum + 1.0;
 
-    gcs().send_text(MAV_SEVERITY_CRITICAL,
-                    "STM32 xd:%d yd:%d",
-                    stm32.xd,
-                    stm32.yd);
+    gcs().send_text(MAV_SEVERITY_CRITICAL, "STM32 xd:%d yd:%d", stm32.xd, stm32.yd);
 }
 
 // called at 50hz
