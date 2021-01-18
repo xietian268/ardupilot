@@ -97,7 +97,45 @@ bool AP_STM32::update()
             _step = 0;
         }
     }
-    _port->write(numc);
+
+    for (int16_t i = 1; i < 11; i++){
+
+        switch(i) {
+        case 1:
+            _port->write(0x55);
+            break;
+        case 2:
+            _port->write(0xff);
+            break;
+        case 3:
+            _port->write(0xfa);
+            break;
+        case 4:
+            _port->write(12);
+            break;
+        case 5:
+            _port->write(13);
+            break;
+        case 6:
+            _port->write(14);
+            break;
+        case 7:
+            _port->write(15);
+            break;
+        case 8:
+            _port->write(16);
+            break;
+        case 9:
+            _port->write(0x0d);
+            break;
+        case 10:
+            _port->write(0x0a);
+            break;
+        default:
+            break;
+        }
+    }
+
 
     return false;
 }
